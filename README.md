@@ -1,6 +1,6 @@
 # 📝 NoteFlow – Smart Notes Web Application
 
-A modern Notes Management Web Application developed using **Flask, SQLite, HTML, CSS, and JavaScript**. NoteFlow helps users securely create, organize, search, and manage notes while providing intelligent rule-based suggestions to improve productivity.
+A modern Notes Management Web Application developed using **Flask, SQLite, HTML, CSS, and JavaScript**. NoteFlow helps users securely create, organize, and manage notes while providing intelligent rule-based suggestions to improve productivity.
 
 ---
 
