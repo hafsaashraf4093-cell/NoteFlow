@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}
+<h1><i class="fa-solid fa-gear"></i> Settings</h1>
+<p>Manage your account preferences and customize your NoteFlow experience.</p>
+
+
+<!-- Theme Toggle -->
+<form method="POST" style="margin-bottom:30px;">
+  <label for="theme">Choose Theme:</label>
+  <select name="theme" id="theme" style="padding: 10px; border-radius: 10px;">
+    <option value="light" {% if session.get('theme') == 'light' %}selected{% endif %}><i class="fa-regular fa-sun"></i> Light Mode</option>
+    <option value="dark" {% if session.get('theme') == 'dark' %}selected{% endif %}><i class="fa-solid fa-moon"></i> Dark Mode</option>
+  </select>
+  <button type="submit"  style="padding: 12px 27px; margin-left: 0%;"><i class="fa fa-save"></i> Save</button>
+</form>
+
+<!-- Account Settings -->
+<div class="settings-section">
+  <h2><i class="fa-solid fa-user-gear"></i> Account Settings</h2>
+  <form method="POST" action="{{ url_for('settings') }}">
+    <input type="text" name="username" placeholder="Update Username" style="padding: 8px; border-radius: 10px; margin:10px 0px ;" > 
+    <input type="email" name="email" placeholder="Update Email" style="padding: 8px; border-radius: 10px; margin:10px 0px ;"> 
+    <input type="password" name="password" placeholder="Update Password" style="padding: 8px; border-radius: 10px;margin:10px 0px ;"> <br>
+    <button type="submit"  style="padding: 12px 27px; margin-left: 0%;"><i class="fa fa-user-edit"></i> Update Account</button>
+  </form>
+</div>
+
+<!-- Notifications -->
+<div class="settings-section" style="margin-top:30px;">
+  <h2><i class="fa-solid fa-bell"></i> Notifications</h2>
+  <form method="POST" action="{{ url_for('settings') }}">
+    <label><input type="checkbox" name="email_notifications"> Email Notifications</label><br>
+    <label><input type="checkbox" name="push_notifications"> Push Notifications</label><br>
+    <button type="submit" style="padding: 12px 24px; margin-left: 0%;"><i class="fa fa-bell"></i> Save Preferences</button>
+  </form>
+</div>
+
+<!-- Data Export -->
+<div class="settings-section" style="margin-top:30px;">
+  <h2><i class="fa-solid fa-folder-open"></i> Data Export</h2>
+  <p>You can export all your notes as PDF or JSON.</p>
+  <a href="{{ url_for('dashboard') }}"><button style="padding: 12px 24px; margin-left: 0%;"><i class="fa fa-file-pdf"></i> Export as PDF</button></a>
+  <a href="{{ url_for('dashboard') }}"><button style="padding: 12px 24px; margin-left: 0%;"><i class="fa fa-file-code"></i> Export as JSON</button></a>
+</div>
+
+<!-- Danger Zone -->
+<div class="settings-section danger" style="margin-top:30px;">
+  <h2><i class="fa-solid fa-triangle-exclamation"></i> Exit Account</h2>
+  <p>Delete your account and all notes permanently.</p>
+  <form method="GET" action="{{ url_for('logout') }}">
+    <button type="submit" style="background:linear-gradient(135deg,red); padding: 12px 24px; margin-left: 0%;"  style="padding: 15px 70px; margin-left: 0%;"><i class="fa fa-trash"></i> Delete Account</button>
+  </form>
+</div>
+{% endblock %}
+<!-- href="{{ url_for('logout') }}" -->

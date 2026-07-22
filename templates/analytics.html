@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="analytics-page">
+
+  <h1><i class="fa-solid fa-chart-column" style="margin-right: 10px;"></i>Analytics</h1>
+  <p>Total Notes: {{ total_notes }}</p>
+  <p>Pinned Notes: {{ pinned_notes }}</p>
+
+  <div class="suggestions-grid">
+    <div class="suggestion-card">📈 Track your productivity trends</div>
+    <div class="suggestion-card">🕒 See notes created per week</div>
+  </div>
+
+</div>
+
+{% endblock %}
+
+
+
+
+

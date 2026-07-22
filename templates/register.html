@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="auth-container" style="display:flex;flex-wrap:wrap;align-items:center;gap:40px;">
+  <!-- left section -->
+  <div class="auth-left" style="flex:1;min-width:300px;">
+    <h2 style="font-size: 30px;"><i class="fa-regular fa-circle-user"></i> Create Account </h2>
+    <p>Join NoteFlow and organize your life smarter</p>
+    <form method="POST" class="auth-form">
+      <input type="text" name="username" placeholder="Choose a username" required  style="padding: 10px 70px; border-radius: 10px; margin: 10px 0px;" > <br>
+      <input type="email" name="email" placeholder="Enter your email" required style="padding: 10px 70px; border-radius: 10px; margin: 10px 0px;"> <br>
+      <input type="password" name="password" placeholder="Choose a password" required  style="padding: 10px 70px; border-radius: 10px; margin: 10px 0px;"> <br>
+      <button type="submit" style="padding: 14px 124px; margin-left: 0%;"><i class="fa fa-user-plus"></i> Register</button>
+    </form>
+    <p class="switch-link">Already have an account? <a href="{{ url_for('login') }}" style="color:aqua; margin-bottom: 10px;">Login here</a></p>
+  </div>
+  <!-- right section -->
+  <div class="auth-right" style="flex:1;min-width:300px;text-align:center;">
+    <img src="{{ url_for('static', filename='img/register_illustration.png') }}" alt="Register Illustration" style="max-width:80%;border-radius:20px;">
+  </div>
+</div>
+{% endblock %}
+
+

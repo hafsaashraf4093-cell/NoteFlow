@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+  <h2>{{ action }} Note</h2>
+  <form method="POST">
+    <input type="text" name="title" value="{{ note[2] if note else '' }}" placeholder="Title" required style="width:100%;padding:12px;margin-bottom:10px;border-radius:8px;">
+    <textarea name="content" rows="8" style="width:100%;padding:12px;border-radius:8px;">{{ note[3] if note else '' }}</textarea>
+    <label>
+      <input type="checkbox" name="pinned" {% if note and note[4]==1 %}checked{% endif %}> Pin this note
+    </label>
+    <button type="submit">{{ action }}</button>
+  </form>
+
+  <!-- ✅ AI Suggestion Block -->
+  {% if ai_suggestion %}
+  <div class="ai-suggestion">
+    <strong><i class="fa-regular fa-lightbulb"></i> AI Suggestion:</strong> {{ ai_suggestion }}
+  </div>
+  {% endif %}
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+

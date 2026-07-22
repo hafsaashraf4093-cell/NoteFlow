@@ -1,0 +1,384 @@
+:root {
+  --primary:#00d4ff;
+  --secondary:#000b47;
+  --accent:#ffcc70;
+  --text-main:#faf5f5;
+  --text-light:#b8c4d2;
+  --transition:all 0.35s ease;
+}
+
+*{margin: 0%;;
+  padding: 0%;;
+  box-sizing:border-box;
+}
+
+body {
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(135deg,#070F2B,#1B1A55);
+  color:var(--text-main);
+  min-height:100vh;
+  line-height:1.7;
+}
+
+nav {
+  width:100%;
+  padding:18px 6%;
+  display:flex;justify-content:space-between;align-items:center;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  position:sticky;top:0;z-index:1000;
+}
+nav .logo{font-size:1.4rem;font-weight:700;color:#fff;}
+nav .logo span{color:var(--primary);}
+nav .nav-links{display:flex;gap:25px;}
+nav a{color:var(--text-main);text-decoration:none;font-weight:500;}
+nav a:hover{color:var(--primary);}
+
+.container {
+  width:min(1200px,90%);
+  margin:45px auto;
+  background:rgba(255,255,255,0.06);
+  backdrop-filter:blur(18px);
+  border-radius:24px;
+  padding:45px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.25);
+}
+
+button {
+  border:none;outline:none;
+  padding:14px 26px;border-radius:14px;
+  cursor:pointer;font-size:0.95rem;font-weight:600;
+  display:inline-flex;align-items:center;gap:10px;
+  color:#fff;
+  background:linear-gradient(135deg,var(--secondary),var(--primary));
+  transition:var(--transition);
+  margin:10px 8px;
+}
+button:hover{transform:translateY(-4px) scale(1.02); }
+button i{font-size:1rem;}
+
+.notes-grid {
+  display:grid;
+  grid-template-columns:no-repeat(auto-fit,minmax(320px,1fr));
+  gap:28px;
+  margin-top:30px;
+}
+.note-card {
+  background:rgba(255,255,255,0.07);
+  backdrop-filter:blur(16px);
+  border-radius:22px;
+  padding:28px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  box-shadow:0 8px 24px rgba(0,0,0,0.18);
+  transition:var(--transition);
+}
+.note-card:hover{transform:translateY(-8px);}
+.note-card h3{margin-bottom:17px; color: #00d4ff}
+.note-card p{margin-bottom:20px;}
+.note-card .actions{display:flex;
+  gap:12px;
+  flex-wrap:wrap;}
+
+.suggestions-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:22px;margin-top:25px;
+}
+.suggestion-card {
+  background:linear-gradient(135deg,rgba(0,212,255,0.15),rgba(108,99,255,0.15));
+  border-radius:18px;
+  padding:22px;
+  text-align:center;
+  font-weight:500;
+}
+
+body.dark {
+  background:linear-gradient(135deg,#05070a,#111827,#1f2937);
+  color:#f3f4f6;
+}
+body.dark nav{background:rgba(15,23,42,0.75);}
+body.dark .container,body.dark .note-card,body.dark .suggestion-card{
+  background:rgba(17,24,39,0.55);
+}
+
+
+
+body.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+.navbar.dark-mode {
+  background-color: #1e1e1e;
+}
+body.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+.navbar.dark-mode {
+  background-color: #1e1e1e;
+}
+
+.auth-container.dark-mode input,
+.auth-container.dark-mode button {
+  background-color: #2a2a2a;
+  color: #f0f0f0;
+}
+
+
+
+
+.footer {
+    background: #001031;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.footer p {
+    margin: 0;
+}
+
+
+/* Dark Mode Support */
+body.dark-mode {
+  background-color: #121212 !important;
+  color: #f0f0f0 !important;
+}
+
+.navbar.dark-mode {
+  background-color: #1e1e1e !important;
+}
+
+.note-card.dark-mode,
+.auth-container.dark-mode,
+.suggestion-card.dark-mode,
+footer.dark-mode {
+  background-color: #1e1e1e !important;
+  color: #f0f0f0 !important;
+}
+
+
+footer {
+  margin: 0;
+  padding: 15px;
+  background: #0a003f;
+  color: #fff;
+  text-align: center;
+}
+
+body.dark-mode footer {
+  background: #000;
+  color: #f0f0f0;
+}
+
+body, .navbar, .note-card, .auth-container, .suggestion-card, footer {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+
+
+/* Normalize font sizes */
+body {
+  font-size: 16px;   /* base size */
+}
+
+nav .logo {
+  font-size: 1.6rem; /* ~25px, clean for logo */
+}
+
+nav a {
+  font-size: 0.95rem; /* ~15px, normal links */
+}
+
+button {
+  font-size: 0.95rem; /* consistent button text */
+}
+
+.note-card h3 {
+  font-size: 1.1rem; /* ~17px, headings */
+}
+
+.note-card p,
+.suggestion-card {
+  font-size: 0.95rem; /* normal readable text */
+}
+
+.footer {
+  font-size: 0.9rem; /* ~14px, subtle footer text */
+}
+
+
+/* Elegant Button Style */
+button {
+  border: none;
+  outline: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  background: linear-gradient(135deg, #4a90e2, #357abd); /* Elegant blue gradient */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #5aa9f0, #3f83c1); /* lighter hover */
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+button i {
+  font-size: 1rem;
+}
+
+
+
+
+
+.ai-suggestion {
+  background: rgba(0,212,255,0.1);
+  border-left: 4px solid var(--primary);
+  padding: 12px;
+  margin-top: 20px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+
+
+
+
+/* Remove extra space below footer */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  flex: 1; /* pushes footer to bottom without extra gap */
+}
+
+footer {
+  margin: 0 !important;
+  padding: 15px;
+}
+
+
+
+
+
+/* ============================= */
+/* 📱 Responsive Enhancements    */
+/* ============================= */
+
+/* Large tablets & small laptops */
+@media (max-width: 1200px) {
+  .container {
+    width: 95%;
+    padding: 30px;
+  }
+  .notes-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+  nav .nav-links {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  .auth-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+  }
+  .auth-left, .auth-right {
+    min-width: 100%;
+  }
+  .auth-form input, .auth-form button {
+    width: 90%;
+    margin: 8px auto;
+  }
+  .auth-right img {
+    max-width: 100%;
+  }
+  .notes-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 20px;
+  }
+  nav .nav-links {
+    flex-direction: column;
+    width: 100%;
+  }
+  nav a {
+    width: 100%;
+    padding: 10px 0;
+  }
+  .dashboard-cards,
+  .notes-grid,
+  .suggestions-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 576px) {
+  h1, h2, h3 {
+    font-size: 1.3rem;
+  }
+  .note-card h3 {
+    font-size: 1rem;
+  }
+  .note-card p,
+  .suggestion-card {
+    font-size: 0.85rem;
+  }
+  .login-options {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .btn, .btn-secondary {
+    width: 100%;
+  }
+  .ai-suggestion {
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+  .footer {
+    font-size: 0.8rem;
+    padding: 12px;
+  }
+}

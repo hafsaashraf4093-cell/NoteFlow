@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="home-container" style="display:flex;flex-wrap:wrap;align-items:center;gap:40px;">
+  
+  <!-- Left Section -->
+  <div style="flex:1;min-width:300px;">
+    <h1>Welcome to NoteFlow <i class="fa-regular fa-face-laugh-beam"></i></h1>
+    <p>Your modern smart note management system with AI suggestions.</p>
+    <div style="margin-top:25px;">
+      <a href="{{ url_for('register') }}"><button><i class="fa fa-user-plus"></i> Get Started</button></a>
+      <a href="{{ url_for('login') }}"><button><i class="fa fa-sign-in-alt"></i> Login</button></a>
+    </div>
+  </div>
+
+  <!-- Right Section -->
+  <div style="flex:1;min-width:300px;text-align:center;">
+    <img src="{{ url_for('static', filename='img/home_illustration.png') }}" alt="Home Illustration" style="max-width:80%;border-radius:20px;">
+  </div>
+
+</div>
+{% endblock %}

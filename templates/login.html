@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="auth-container" style="display:flex;flex-wrap:wrap;align-items:center;gap:40px;">
+  <!-- left section -->
+  <div class="auth-left" style="flex:1;min-width:300px;">
+    <h2 style="font-size: 30px;">Welcome Back 👋</h2>
+    <p>Login to access your smart notes dashboard.</p>
+    <form method="POST" class="auth-form">
+      <input type="text" name="username" placeholder="Username" required style="padding: 10px 70px; border-radius: 10px; margin: 10px 0px;" > <br>
+      <input type="password" name="password" placeholder="Password" required style="padding: 10px 70px; border-radius: 10px; margin: 10px 0px;"> <br>
+      <button type="submit" style="padding: 15px 140px; margin-left: 0%;"><i class="fa fa-sign-in-alt"></i> Login</button>
+    </form>
+   <div class="login-options">
+      <button style="padding: 14px 20px; margin-left: 0%; border-radius: 14px; " ><a href="{{ url_for('register') }}" class="btn-secondary" style="text-decoration: none; color: aliceblue; font-size: 14px;" >Create New Account</a></button>
+      <a href="{{ url_for('register') }}"class="btn-link" style="color: rgb(0, 195, 255);">Forgot Password?</a>
+    </div> 
+  </div>
+  <!-- right section -->
+  <div class="auth-right" style="flex:1;min-width:300px;text-align:center;">
+    <img src="{{ url_for('static', filename='img/login_illustration.png') }}" alt="Login Illustration"  style="max-width:80%;border-radius:20px;">
+  </div>
+</div>
+{% endblock %}
+
+

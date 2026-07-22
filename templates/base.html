@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NoteFlow</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <!-- CSS -->
+   
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="{% if session.get('theme') == 'dark' %}dark-mode{% endif %}">
+  <div class="navbar {% if session.get('theme') == 'dark' %}dark-mode{% endif %}">
+  <!-- Navbar -->
+  <nav>
+    <div class="logo" style="font-size: 40px;">Note<span>Flow</span></div>
+  <div class="nav-links">
+  {% if 'user_id' in session %}
+    <a href="{{ url_for('dashboard') }}"><i class="fa-solid fa-note-sticky"></i> Dashboard</a>
+    <a href="{{ url_for('analytics') }}"><i class="fa-solid fa-chart-line"></i> Analytics</a>
+    <a href="{{ url_for('settings') }}"><i class="fa-solid fa-gear"></i> Settings</a>
+    <a href="{{ url_for('logout') }}"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+  {% else %}
+    <a href="{{ url_for('home') }}"><i class="fa-solid fa-house"></i> Home</a>
+    <a href="{{ url_for('login') }}"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+    <a href="{{ url_for('register') }}"><i class="fa-solid fa-user-plus"></i> Register</a>
+  {% endif %}
+</div>
+
+  </nav>
+
+  <div class="container">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="flash {{ category }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </div>
+
+  <!-- JS -->
+  <script>
+    function toggleDarkMode(){
+      document.body.classList.toggle("dark");
+    }
+  </script>
+  <!-- footer section -->
+  <footer class="footer">
+    <p><i class="fa-regular fa-copyright"></i> 2026 NoteFlow. All Rights Reserved | Developed by Hafsa Ashraf</p>
+</footer>
+  
+</body>
+</html>
+
+
+
+

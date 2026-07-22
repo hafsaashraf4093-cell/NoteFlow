@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Welcome Back 👋 {{ session['username'] }}</h1>
+<p>Organize your ideas beautifully with a modern note experience.</p>
+
+<!-- Buttons -->
+<a href="{{ url_for('add_note') }}"><button><i class="fa-solid fa-plus"></i> Create Note</button></a>
+<button onclick="toggleDarkMode()"><i class="fa-solid fa-moon"></i> Dark Mode</button>
+
+<!-- Notes Grid -->
+<div class="notes-grid">
+  {% if notes %}
+    {% for note in notes %}
+    <div class="note-card">
+      <div>
+        <h3>{{ note[2] }}</h3>
+        <p>{{ note[3] }}</p>
+      </div>
+      <div class="actions">
+        <a href="{{ url_for('edit_note', id=note[0]) }}"><button><i class="fa-solid fa-pen"></i> Edit</button></a>
+        <a href="{{ url_for('delete_note', id=note[0]) }}" onclick="return confirm('Delete this note?');"><button><i class="fa-solid fa-trash"></i> Delete</button></a>
+        <a href="{{ url_for('download_note', id=note[0]) }}"><button><i class="fa-solid fa-download"></i> Export</button></a>
+      </div>
+    </div>
+    {% endfor %}
+  {% else %}
+    <div class="note-card">
+      <img src="{{ url_for('static', filename='img/empty_state.png') }}" alt="Empty State" style="max-width:200px;">
+      <p>No notes yet. Start by adding one!</p>
+    </div>
+  {% endif %}
+</div>
+
+<!-- Suggestions -->
+<h2 style="margin-top:50px;">Suggestions</h2>
+<div class="suggestions-grid">
+  <div class="suggestion-card">🚀 Build a Mobile Notes App</div>
+  <div class="suggestion-card">🤖 Add AI Note Summarizer</div>
+  <div class="suggestion-card">🌙 Improve Dark Mode Experience</div>
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
