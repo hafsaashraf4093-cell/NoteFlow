@@ -169,7 +169,25 @@ The application is fully responsive and works on:
 
 ## 📸 Screenshots
 
-> Screenshots will be added soon.
+### Home Page
+
+![Home](assets/home.png)
+
+### Login
+
+![Login](assets/login.png)
+
+### Dashboard
+
+![Dashboard](assets/dashboard.png)
+
+### Analytics
+
+![Analytics](assets/analytics.png)
+
+### Settings
+
+![Settings](assets/settings.png).
 
 ---
 
