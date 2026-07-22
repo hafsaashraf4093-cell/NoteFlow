@@ -119,8 +119,8 @@ Example:
 | Important | Pin this Note |
 | Meeting | Create Action Items |
 
+Note: AI suggestions are an optional enhancement. The core application (authentication, note management, search, analytics, and settings) works independently of external AI services
 > Future versions may integrate AI APIs for advanced suggestions.
-
 ---
 
 ## 📊 Analytics
