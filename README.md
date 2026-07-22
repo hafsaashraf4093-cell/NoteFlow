@@ -9,7 +9,6 @@ A modern Notes Management Web Application developed using **Flask, SQLite, HTML,
 - 🔐 User Registration & Login Authentication
 - 📝 Create, Read, Update & Delete (CRUD) Notes
 - 📌 Pin Important Notes
-- 🔍 Search Notes by Keywords
 - 🤖 Smart Rule-Based AI Suggestions
 - 📊 Analytics Dashboard
 - ⚙️ User Settings
